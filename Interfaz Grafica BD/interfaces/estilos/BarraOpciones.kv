@@ -1,0 +1,38 @@
+<BarraOpciones>:
+    orientation: 'horizontal'
+    canvas.before:
+        Color:
+            rgba: 0,0.0392,0.1373,.9
+        Rectangle:
+            size: self.size
+            pos: self.pos  
+    spacing: 30
+    padding: 0,0,20,20
+    Button:
+        id: "boton_1"
+        text: 'Dar entrada auto'
+        font_size:20
+        
+        background_normal: './icons/box1.png'
+        background_down: './icons/box2.png'
+        border: 30, 30, 30, 30
+        size_hint:(1,1)
+        on_press: root.dar_entrada()
+
+    Button:
+        text: 'Dar salida'
+        font_size:20
+        background_normal: './icons/box1.png'
+        background_down: './icons/box2.png'
+        border: 30, 30, 30, 30
+        size_hint:(1,1)
+        on_press: root.dar_salida()
+    Button:
+        text: 'Agregar Tarifa'
+        font_size:20
+        background_normal: './icons/box1.png'
+        background_down: './icons/box2.png'
+        border: 30, 30, 30, 30
+        size_hint:(1,1)
+        on_press: root.agregar_tarifa()
+        

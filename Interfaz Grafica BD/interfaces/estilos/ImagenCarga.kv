@@ -1,0 +1,19 @@
+<ImagenCarga>:
+    canvas.before:
+        Color:
+            rgb: 0,0.0392,0.1373
+        Rectangle:
+            size: self.size
+            pos: self.pos  
+    spacing: 30
+    padding: [30,20,50,40]
+    orientation: "vertical"
+    Button:
+        text: 'Subir Archivo'
+        font_size:20
+        background_normal: './icons/box1.png'
+        background_down: './icons/box2.png'
+        border: 30, 30, 30, 30
+        size_hint:(1,.15)
+        #pos_hint: {"center_x" :0.2, "center_y":0.2} 
+        on_press: root.abrirArchivo()
