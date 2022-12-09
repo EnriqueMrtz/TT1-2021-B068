@@ -21,9 +21,12 @@ class PreprocesamientoROI:
         ###Limpieza de ruido
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
         opening = cv2.morphologyEx(imagen_binarizada, cv2.MORPH_OPEN, kernel)
-        ventana.mostrarIMG("APERTURA", opening)
+        cv2.imshow("APERTURA", opening)
+        cv2.waitKey(0)
 
         hacerOCR = DeteccionOCR(opening)
         caracteres = hacerOCR.detectarTexto()
-
+        caracteres = caracteres.replace(" ","")
         return caracteres
+
+        

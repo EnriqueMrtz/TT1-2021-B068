@@ -22,6 +22,7 @@ class DeteccionOCR:
 
     def detectarTexto(self):
         self.config_tesseract()
+        d = pytesseract.image_to_data(self._roi, output_type=Output.DICT)
         self._caracteresEncontrados = pytesseract.image_to_string(self._roi, config=self._configOCR)
         self._caracteresEncontrados = self.limpiarTexto()
         

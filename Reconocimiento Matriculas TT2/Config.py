@@ -2,9 +2,9 @@
 TOMARCAPTURA = False
 #Ruta de la foto inicial (banco de fotos u otras)
 #PATH_FOTO = "BancoFotos/37.jpg"
-PATH_FOTO = "D:/kamor/Desktop/FotosPrueba/48.png"
+PATH_FOTO = "BancoFotos/5.jpg"
 #True muestra todas las imagenes durante el proceso y false las oculta
-MOSTRAR = True
+MOSTRAR = False
 #Valores para acondicionar foto
 ANCHOREQ = 1920
 ALTOREQ = 1080
@@ -17,6 +17,6 @@ ROIRESY_MAX = 134
 #Modo PSM de Tesseract
 PSM = 7
 #Configuración para iniciar el cliente
-HOST = "201.121.156.96"
+HOST = "187.145.245.119"
 PORT = 8050
-CLISERV = False
+CLISERV = True

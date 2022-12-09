@@ -4,6 +4,7 @@ from SegementadorImagen import *
 from DelimitadorTexto import *
 from VisualizadorImagenes import *
 from PreprocesamientoROI import *
+from GeneradorQR import *
 from Config import *
 from Cliente import *
 if __name__ == "__main__":
@@ -48,6 +49,8 @@ if __name__ == "__main__":
         if(CLISERV):
             cliente = Cliente(caracteres_encontrados)
             llaveQR = cliente.iniciarCliente()
+            imagenQR = GeneradorQR(llaveQR)
+            imagenQR.generarQR()
 
 
     else:

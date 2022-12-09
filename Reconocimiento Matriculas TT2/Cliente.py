@@ -1,11 +1,10 @@
-from base64 import decode
+import sys
 import socket
 from Config import *
 
 class Cliente:
     def __init__(self, caracteresEncontrados):
         self._caracteresEncontrados = caracteresEncontrados
-        self._llaveQR = ""
 
     def iniciarCliente(self):
         # Creando un socket TCP/IP
@@ -18,22 +17,18 @@ class Cliente:
 
         try:
             # Enviando datos
-            message1 = bytes(self._caracteresEncontrados,'UTF-8')
-            print('Enviando {!r}'.format(self._caracteresEncontrados))
-            sock.sendall(message1)
-
-            # Buscando respuesta
-            amount_received = 0
-            amount_expected = len(self._caracteresEncontrados)
+            mensaje = self._caracteresEncontrados
+            message1 = mensaje.encode("UTF8")
+            print('Enviando: {!r}'.format(message1))
+            sock.send(message1)
             
-            while amount_received < amount_expected:
-                data = sock.recv(1024)
-                amount_received += len(data)
-                print('Recibido {!r}'.format(data))
-                self._llaveQR = data.decode("UTF-8")
+            print("Esperando datos:")
+            data = sock.recv(512)
+            print('Recibido: {!r}'.format(data))
+            
 
         finally:
             print('Cerrando socket')
             sock.close()
         
-        return self._llaveQR
+        return self._caracteresEncontrados
